@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SlashdotTest
 // @namespace    https://github.com/skurtn/TampermonkeyScripts
-// @version      1.0.2
+// @version      1.0.1
 // @description  Tinkers with Slashdot's landing page
 // @author       S. Kurt Newman
 // @match        https://slashdot.org/*
