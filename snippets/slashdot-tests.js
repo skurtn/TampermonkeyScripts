@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Test
+// @name         SlashdotTest
 // @namespace    https://github.com/skurtn/TampermonkeyScripts
-// @version      1.0.0
+// @version      1.0.1
 // @description  Tinkers with Slashdot's landing page
 // @author       S. Kurt Newman
 // @match        https://slashdot.org/*
@@ -15,8 +15,9 @@
 
 (function() {
     'use strict';
+    var version = "1.0.1";
 
-    GM_log( "Test tampermonkey script started" );
+    GM_log( "Slashdot test script started: v" + version );
 
     // display a list of story headlines on slashdot
     $( "span.story-title > a" ).each( function( index ) {
