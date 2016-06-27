@@ -8,6 +8,8 @@
 // @run-at       document-end
 // @grant        GM_log
 // @noiframes
+// @updateUrl    https://raw.githubusercontent.com/skurtn/TampermonkeyScripts/master/snippets/slashdot-tests.js.version
+// @downloadUrl  https://raw.githubusercontent.com/skurtn/TampermonkeyScripts/master/snippets/slashdot-tests.js
 // @require      https://code.jquery.com/jquery-3.0.0.min.js#sha256=6069398299730203aa434d1520ccf88ee8bf0aeee241aca18edbd85c78943432
 // ==/UserScript==
 
