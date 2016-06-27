@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SlashdotTest
 // @namespace    https://github.com/skurtn/TampermonkeyScripts
-// @version      1.0.1
+// @version      1.0.2
 // @description  Tinkers with Slashdot's landing page
 // @author       S. Kurt Newman
 // @match        https://slashdot.org/*
@@ -14,7 +14,7 @@
 
 (function() {
     'use strict';
-    var version = "1.0.1";
+    var version = "1.0.2";
 
     GM_log( "Slashdot test script started: v" + version );
 
