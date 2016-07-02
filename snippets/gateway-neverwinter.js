@@ -18,7 +18,22 @@
     var Version = "1.0.3";
     var Name = "Gatway Neverwinter Test";
 
-    VM_log( Name + "v" + Version + " started" );
+    GM_log( Name + " v" + Version + " started" );
 
-    VM_log( Name + "v" + Version + " ended" );
+    $( "#content" ).change(function() {
+        var date = new Date;
+        GM_log( "[" + date + "]: Got a content change" );
+    });
+
+    $( "#modal" ).change(function() {
+        var date = new Date;
+        GM_log( "[" + date + "]: Got a modal change" );
+    });
+
+    $( "#modal" ).change(function() {
+        var date = new Date;
+        GM_log( "[" + date + "]: Got a tooltip change" );
+    });
+
+    GM_log( Name + " v" + Version + " ended" );
 })();
