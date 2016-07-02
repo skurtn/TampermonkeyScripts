@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gateway Neverwinter Tests
 // @namespace    https://github.com/skurtn/TampermonkeyScripts
-// @version      1.0.2
+// @version      1.0.3
 // @description  Testing how to tinker with gateway.neverwinter.com
 // @author       S. Kurt Newman
 // @match        http*://gateway.playneverwinter.com/*
@@ -15,7 +15,7 @@
 
 (function() {
     'use strict';
-    var Version = "1.0.2";
+    var Version = "1.0.3";
     var Name = "Gatway Neverwinter Test";
 
     VM_log( Name + "v" + Version + " started" );
