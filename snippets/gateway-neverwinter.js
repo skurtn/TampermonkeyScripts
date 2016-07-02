@@ -20,9 +20,9 @@
 
     GM_log( Name + " v" + Version + " started" );
 
-    $( "#content" ).change(function() {
+    $( ".wrapper" ).change(function() {
         var date = new Date;
-        GM_log( "[" + date + "]: Got a content change" );
+        GM_log( "[" + date + "]: The wrapper changed" );
     });
 
     $( "#modal" ).change(function() {
@@ -30,9 +30,9 @@
         GM_log( "[" + date + "]: Got a modal change" );
     });
 
-    $( "#modal" ).change(function() {
+    $( ".notification" ).change(function() {
         var date = new Date;
-        GM_log( "[" + date + "]: Got a tooltip change" );
+        GM_log( "[" + date + "]: Got a notification" );
     });
 
     GM_log( Name + " v" + Version + " ended" );
