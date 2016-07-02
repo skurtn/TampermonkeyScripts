@@ -5,7 +5,7 @@
 // @description  Testing how to tinker with gateway.neverwinter.com
 // @author       S. Kurt Newman
 // @match        http*://gateway.playneverwinter.com/*
-// @run-at       document-end
+// @run-at       document-body
 // @grant        GM_log
 // @updateURL    https://raw.githubusercontent.com/skurtn/TampermonkeyScripts/master/snippets/gateway-neverwinter.meta.js
 // @downloadURL  https://raw.githubusercontent.com/skurtn/TampermonkeyScripts/master/snippets/gateway-neverwinter.js
