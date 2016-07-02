@@ -5,7 +5,7 @@
 // @description  Testing how to tinker with gateway.neverwinter.com
 // @author       S. Kurt Newman
 // @match        http*://gateway.playneverwinter.com/*
-// @run-at       document-body
+// @run-at       document-end
 // @grant        GM_log
 // @updateURL    https://raw.githubusercontent.com/skurtn/TampermonkeyScripts/master/snippets/gateway-neverwinter.meta.js
 // @downloadURL  https://raw.githubusercontent.com/skurtn/TampermonkeyScripts/master/snippets/gateway-neverwinter.js
@@ -20,19 +20,9 @@
 
     GM_log( Name + " v" + Version + " started" );
 
-    $( ".wrapper" ).change(function() {
-        var date = new Date;
+    $( ".wrapper" ).on( "change", { foo: "bar" }, function( eventObj ) {
+        var date = new Date();
         GM_log( "[" + date + "]: The wrapper changed" );
-    });
-
-    $( "#modal" ).change(function() {
-        var date = new Date;
-        GM_log( "[" + date + "]: Got a modal change" );
-    });
-
-    $( ".notification" ).change(function() {
-        var date = new Date;
-        GM_log( "[" + date + "]: Got a notification" );
     });
 
     GM_log( Name + " v" + Version + " ended" );
