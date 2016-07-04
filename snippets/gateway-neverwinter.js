@@ -7,23 +7,55 @@
 // @match        http*://gateway.playneverwinter.com/*
 // @run-at       document-end
 // @grant        GM_log
-// @updateURL    https://raw.githubusercontent.com/skurtn/TampermonkeyScripts/master/snippets/gateway-neverwinter.meta.js
-// @downloadURL  https://raw.githubusercontent.com/skurtn/TampermonkeyScripts/master/snippets/gateway-neverwinter.js
 // @require      https://code.jquery.com/jquery-3.0.0.min.js#sha256=6069398299730203aa434d1520ccf88ee8bf0aeee241aca18edbd85c78943432
 // @noiframes
 // ==/UserScript==
 
+function WaitSelectorException( selector ) {
+    this.selector = selector;
+    this.type = "WaitSelectorException";
+}
+
+$.fn.waitSelector = function( selector, handler ) {
+    var interval = localStorage.getItem( selector );
+
+    if( !interval ) {
+        interval = window.setInterval( function() {
+            var dom = $( selector );
+
+            if( dom.length > 0 ) {
+                window.clearInterval( interval );
+                localStorage.removeItem( selector );
+                handler( dom );
+            }
+
+        }, 500);
+
+        localStorage.setItem( selector, interval );
+    }
+    else
+        throw new WaitSelectorException( selector );
+
+    return true;
+};
+
+function mutationHandler( mutations ) {
+    var d = new Date();
+
+    GM_log( "[" + d + "] Mutation Found" );
+    mutations.forEach( function( mutation ) {
+            GM_log( mutation );
+    });
+    GM_log( "[" + d + "] Mutations Done" );
+}
+
 (function() {
     'use strict';
-    var Version = "1.0.3";
-    var Name = "Gatway Neverwinter Test";
-
-    GM_log( Name + " v" + Version + " started" );
-
-    $( ".wrapper" ).on( "change", { foo: "bar" }, function( eventObj ) {
-        var date = new Date();
-        GM_log( "[" + date + "]: The wrapper changed" );
+    $( document ).waitSelector( "div.box-content", function( dom ) {
+        var mutationConfig = { childList: true, characterData: true, attributes: true, subtree: true };
+        var observer = new window.MutationObserver (mutationHandler);
+        dom.each( function() {
+            observer.observe( this, mutationConfig );
+        });
     });
-
-    GM_log( Name + " v" + Version + " ended" );
 })();
